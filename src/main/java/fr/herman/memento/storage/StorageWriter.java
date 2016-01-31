@@ -1,7 +1,7 @@
 package fr.herman.memento.storage;
 
-import java.io.Reader;
+import java.io.InputStream;
 
 public interface StorageWriter {
-	long writeData(long cursor,Reader data);
+	long writeData(long cursor, InputStream data);
 }
