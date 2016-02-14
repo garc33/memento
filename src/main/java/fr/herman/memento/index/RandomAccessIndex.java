@@ -7,7 +7,7 @@ import java.io.RandomAccessFile;
  * Simple implementation of index using a {@link RandomAccessFile} to store
  * positions in store.</br>
  */
-public class RandomAccessIndex implements Index, AutoCloseable {
+public class RandomAccessIndex implements Index {
 
 	private final RandomAccessFile file;
 
