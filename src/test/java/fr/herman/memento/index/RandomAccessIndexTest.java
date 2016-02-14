@@ -55,4 +55,13 @@ public class RandomAccessIndexTest {
 		then(structure).should().writePosition(file, 123456789L);
 	}
 
+	@Test
+	public void testClose() throws Exception {
+		// when
+		randomAccessIndex.close();
+
+		// then
+		then(file).should().close();
+	}
+
 }
