@@ -32,13 +32,14 @@ public class FileDataStoreTest {
 	public void testWriteRecord() throws Exception {
 		// given
 		Object data = new Object();
+		@SuppressWarnings("unchecked")
 		DataWriter<Object> writer = given(mock(DataWriter.class).write(data, file)).willReturn(10L).getMock();
 
 		// when
 		long ptr = fileDataStore.writeRecord(5L, data, writer);
 
 		// then
-		assertThat(ptr).isEqualTo(15);
+		assertThat(ptr).isEqualTo(10L);
 		then(file).should().seek(5L);
 		then(writer).should().write(data, file);
 	}

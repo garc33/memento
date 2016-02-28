@@ -15,7 +15,6 @@ public class Database<T> implements AutoCloseable {
 	private final Schema<T> schema;
 
 	public Database(FileDataStore store, Index index, Sequence sequence, Schema<T> schema) {
-		super();
 		this.store = store;
 		this.index = index;
 		this.sequence = sequence;

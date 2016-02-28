@@ -15,8 +15,7 @@ public class FileDataStore implements AutoCloseable {
 
 	public <T> long writeRecord(long index, T data, DataWriter<T> writer) throws IOException {
 		file.seek(index);
-		long length = writer.write(data, file);
-		return index + length;
+		return writer.write(data, file);
 	}
 
 	public <T> T readRecord(long index, DataReader<T> reader) throws IOException {
