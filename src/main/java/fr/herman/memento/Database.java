@@ -43,10 +43,11 @@ public class Database<T> implements AutoCloseable {
 
 	@Override
 	public void close() throws Exception {
+		System.out.println(cursor);
 		try {
+			store.close();
 			index.close();
 		} finally {
-			store.close();
 		}
 	}
 
